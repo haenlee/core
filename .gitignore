@@ -35,3 +35,16 @@ out/
 
 ### VS Code ###
 .vscode/
+
+#######################################
+/.idea/
+/.mvn/
+/target/
+/mvnw
+/mvnw.cmd
+/.gitignore
+/mvnw
+/mvnw.cmd
+/pom.xml
+/result.json
+/.idea/
