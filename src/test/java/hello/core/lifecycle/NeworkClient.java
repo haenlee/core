@@ -1,5 +1,8 @@
 package hello.core.lifecycle;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 public class NeworkClient {
 
     private String url;
@@ -26,12 +29,14 @@ public class NeworkClient {
         System.out.println("close " + url);
     }
 
+    @PostConstruct
     public void init() {
         System.out.println("NeworkClient.init");
         connect();
         call("초기화 연결 메시지");
     }
 
+    @PreDestroy
     public void close() {
         System.out.println("NeworkClient.close");
         disconnect();
