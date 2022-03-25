@@ -1,9 +1,6 @@
 package hello.core.lifecycle;
 
-import org.springframework.beans.factory.DisposableBean;
-import org.springframework.beans.factory.InitializingBean;
-
-public class NeworkClient implements InitializingBean, DisposableBean {
+public class NeworkClient {
 
     private String url;
 
@@ -29,16 +26,14 @@ public class NeworkClient implements InitializingBean, DisposableBean {
         System.out.println("close " + url);
     }
 
-    @Override
-    public void afterPropertiesSet() throws Exception {
-        System.out.println("NeworkClient.afterPropertiesSet");
+    public void init() {
+        System.out.println("NeworkClient.init");
         connect();
         call("초기화 연결 메시지");
     }
 
-    @Override
-    public void destroy() throws Exception {
-        System.out.println("NeworkClient.destroy");
+    public void close() {
+        System.out.println("NeworkClient.close");
         disconnect();
     }
 }
